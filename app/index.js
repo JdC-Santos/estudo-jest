@@ -1,10 +1,9 @@
 module.exports = function(express) {
   const Router = express.Router();
 
-  Router.get('/', function(req, res) {
-    console.log('funcionando...');
-    res.send('funcionando...');
-  })
+  Router.post('/produtos', function(req, res) {
+    res.status(201).send('produto cadastrado');
+  });
 
   return Router;
 }
