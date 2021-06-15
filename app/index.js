@@ -1,9 +1,7 @@
-module.exports = function(express) {
+module.exports = (express) => {
   const Router = express.Router();
 
-  Router.post('/produtos', function(req, res) {
-    res.status(201).send('produto cadastrado');
-  });
+  Router.use(require('./produtos/router')(express));
 
   return Router;
 }
