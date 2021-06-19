@@ -6,4 +6,8 @@ const ProdutoSchema = new mongoose.Schema({
   valor: { type: Number, required: true }
 });
 
+ProdutoSchema.methods.valorComDesconto = function() {
+  return this.valor - ((this.valor * 10) / 100);
+};
+
 module.exports = mongoose.model('produto', ProdutoSchema);
